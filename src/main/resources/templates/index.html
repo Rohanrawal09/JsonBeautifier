@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.4.1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/3.4.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+
+
+    <link rel="icon" href="//upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/600px-Android_O_Preview_Logo.png" type="image/gif" sizes="16x16">
+    <title>JsonRockezzz</title>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+        <img src="//upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Android_O_Preview_Logo.png/600px-Android_O_Preview_Logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        JsonRockezzz
+    </a>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/help" class="mr-5"><span class="glyphicon glyphicon-user"></span>Help</a></li>
+    </ul>
+</nav>
+    <div class="row mt-4">
+        <div class="col-md-5" align="center">
+            <div class="input-group">
+                <textarea class="form-control" id="normalJsonString" aria-label="With textarea" rows="24" ></textarea>
+            </div>
+        </div>
+        <div class="col-md-2" align="center">
+            <a th:onclick="validateJson()" class="btn btn-danger mt-5" type="submit" style="width: 100%;" >Validate</a>
+            <a th:onclick="beautifyJson()" class="btn btn-info mt-5" type="submit" style="width: 100%;">Beutify</a>
+            <a th:onclick="minifyJson()" class="btn btn-info mt-5 mb-5"type="submit" style="width: 100%;">Minify</a>
+            <a th:onclick="convertToXml()" class="btn btn-info mt-5" type="submit" style="width: 100%;">Convert To Xml</a>
+            <a th:onclick="convertToCsv()" class="btn btn-info mt-5" type="submit" style="width: 100%;">Convert To Csv</a>
+            <a th:onclick="fireDownload()"  id="download-button" class="btn btn-success mt-5" type="submit" style="width: 100%;">Download</a>
+        </div>
+        <div class="col-md-5" align="center" >
+            <div class="input-group">
+                <textarea class="form-control" aria-label="With textarea" id="jsonResult" rows="24" ></textarea>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
